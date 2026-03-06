@@ -1,10 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://yqmk0vpvnyxr"]
+[gd_scene format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfvmua48j0n3g" path="res://assets/grass.jpg" id="1_n34uq"]
+[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_bwv4p"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/ui.png" id="3_dw26h"]
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="3_ecr63"]
+[ext_resource type="PackedScene" uid="uid://bwi02ya4sggfg" path="res://scenes/TriggerArea.tscn" id="4_lrl65"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="5_lrl65"]
+[ext_resource type="PackedScene" uid="uid://vndehr6ncxge" path="res://scenes/FallingFish.tscn" id="8_kbo48"]
+[ext_resource type="Texture2D" uid="uid://c18n2ocefhaci" path="res://assets/kenney_platformerpack/PNG/Tiles/lavaTop_high.png" id="8_n34uq"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwv4p"]
+texture = ExtResource("2_bwv4p")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -33.396004, 38.236)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 33.396004, 38.236)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, -20.812004)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, -64, -64, -64, 64, 64, -20.812004)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.196007, -64, 8.228004)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.196007, -64, 8.228004)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.196007, -64, 8.228004)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 9.196007, -64, 8.228004)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, 64, -64, -64, -64, 64, 64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[node name="Player" parent="." instance=ExtResource("1")]
-position = Vector2(445, 209)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbo48"]
+texture = ExtResource("3_ecr63")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_odhdn"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bwv4p")
+sources/1 = SubResource("TileSetAtlasSource_kbo48")
+
+[node name="Level1" type="Node2D" unique_id=481702268]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1683304901]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1653848331]
+position = Vector2(551.9998, 119.499954)
+scale = Vector2(3.6361108, 3.2361112)
+texture = ExtResource("1_n34uq")
+
+[node name="Player" parent="." unique_id=614664322 instance=ExtResource("1")]
+position = Vector2(58, 86)
 collision_layer = 3
 collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=777634337]
+position = Vector2(0, -7)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAACAAIAAAACAAEAAAABAAIAAAACAAEAAAALAAIAAAADAAAAAAANAAIAAAAEAAAAAAAPAAMAAAAFAAAAAAAQAAMAAAAGAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAkAAAABAAAAAAATAAYAAAABAAAAAAATAAcAAAABAAAAAAATAAgAAAABAAAAAAATAAoAAAABAAAAAAASAAYAAAABAAAAAAASAAcAAAABAAAAAAASAAgAAAABAAAAAAASAAkAAAABAAAAAAARAAcAAAABAAAAAAARAAgAAAABAAAAAAARAAkAAAABAAAAAAAQAAkAAAABAAAAAAAPAAkAAAABAAAAAAAOAAkAAAABAAAAAAAOAAgAAAAHAAEAAAANAAgAAAAFAAEAAAANAAkAAAAIAAAAAAAPAAgAAAAHAAEAAAAMAAIAAAAHAAEAAAATAAUAAAABAAAAAAATAAQAAAAHAAEAAAASAAUAAAAHAAEAAAARAAYAAAAHAAEAAAAQAAcAAAAHAAEAAAAQAAgAAAABAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAMAAkAAAAHAAEAAAALAAkAAAAHAAEAAAAEAAoAAAABAAAAAAADAAoAAAABAAAAAAACAAoAAAABAAAAAAABAAoAAAABAAAAAAAAAAoAAAABAAAAAAAIAAkAAAAHAAEAAAAHAAkAAAAHAAEAAAAEAAkAAAAHAAEAAAADAAkAAAAHAAEAAAABAAkAAAAHAAEAAAACAAkAAAAHAAEAAAAAAAkAAAAHAAEAAAADAAIAAAADAAEAAAAEAAMAAAADAAAAAAAAAAIAAAACAAEAAAAFAAMAAAAHAAEAAAD//wIAAAACAAEAAAD+/wIAAAACAAEAAAD9/wIAAAABAAEAAAAGAAMAAAAHAAEAAAAHAAMAAAAEAAAAAAAJAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_odhdn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717096185]
+position = Vector2(94, 447)
+scale = Vector2(0.57641196, 0.5556701)
+texture = ExtResource("3_dw26h")
+
+[node name="WinArea" parent="Sprite2D" unique_id=995070546 instance=ExtResource("4_lrl65")]
+position = Vector2(3.46974, 3.5992622)
+scale = Vector2(14, 24)
+sceneName = "Level2"
+
+[node name="ResetArea" parent="." unique_id=522431480 instance=ExtResource("4_lrl65")]
+position = Vector2(575, 769)
+scale = Vector2(99.675224, 6.1753845)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=876977743]
+position = Vector2(1000, -246)
+script = ExtResource("5_lrl65")
+obstacle = ExtResource("8_kbo48")
+
+[node name="Lava1" type="Sprite2D" parent="." unique_id=447839421]
+position = Vector2(384, 667.99994)
+scale = Vector2(1.0000001, 0.5937498)
+texture = ExtResource("8_n34uq")
+
+[node name="Lava2" type="Sprite2D" parent="." unique_id=868789339]
+position = Vector2(640.50006, 670.49994)
+scale = Vector2(1.0078127, 0.53906226)
+texture = ExtResource("8_n34uq")

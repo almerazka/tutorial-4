@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cldk2bf7e0v8m"]
+
+[ext_resource type="Script" uid="uid://d3yxxcq7ye1hh" path="res://Slime.gd" id="1_5wwv6"]
+[ext_resource type="Texture2D" uid="uid://t3la6rd2onnl" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlue_dead.png" id="2_1vja8"]
+[ext_resource type="Texture2D" uid="uid://hqxefh2di5hm" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlue_hit.png" id="3_iwav8"]
+[ext_resource type="Texture2D" uid="uid://1ir7yofnx73q" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlue.png" id="4_1i2q2"]
+[ext_resource type="Texture2D" uid="uid://c5sbiq7c88c08" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlue_move.png" id="5_ly5gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdgko"]
+size = Vector2(55.5, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4qr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1vja8")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iwav8")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1i2q2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ly5gv")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=590952744]
+script = ExtResource("1_5wwv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072263505]
+position = Vector2(1.75, 16)
+shape = SubResource("RectangleShape2D_jdgko")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1012858093]
+position = Vector2(-1, 2.9999998)
+scale = Vector2(-0.5092453, 0.5305398)
+sprite_frames = SubResource("SpriteFrames_j4qr3")
+animation = &"Move"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=456614174]
+position = Vector2(-25, 11)
+target_position = Vector2(-1, 40)

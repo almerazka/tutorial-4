@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cra4y50gffknn"]
+
+[ext_resource type="Texture2D" uid="uid://cp08l23yievm7" path="res://assets/kenney_platformerpack/PNG/Particles/fireball.png" id="1_3fq67"]
+[ext_resource type="Script" uid="uid://ddnff7dgl3xi4" path="res://scenes/FallingObject.gd" id="2_3fq67"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pwsf"]
+radius = 37.0
+height = 76.0
+
+[node name="Fireball" type="RigidBody2D" unique_id=502782727]
+
+[node name="Fire" type="Sprite2D" parent="." unique_id=1651020341]
+position = Vector2(1.125, 0)
+scale = Vector2(-1.241, 1.2)
+texture = ExtResource("1_3fq67")
+
+[node name="FallingObject" type="Area2D" parent="." unique_id=15350847]
+script = ExtResource("2_3fq67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingObject" unique_id=988276417]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_7pwsf")
+
+[connection signal="body_entered" from="FallingObject" to="FallingObject" method="_on_FallArea_body_entered"]
